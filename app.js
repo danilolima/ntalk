@@ -5,6 +5,7 @@
 var express = require('express');
 var load = require('express-load');
 var path = require('path');
+var error = require('./middleware/error');
 //var routes = require('./routes');
 
 var app = express();
@@ -18,6 +19,8 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(error.notFound);
+app.use(error.serverError);
 
 /*Tem que sempre ficar no final*/
 load('models')
