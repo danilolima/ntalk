@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -10,15 +9,16 @@ var path = require('path');
 
 var app = express();
 
-load('models')
-	.then('controllers')
-	.then('routes')
-	.into(app);
-
 // all environments
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
+
+/*Tem que sempre ficar no final*/
+load('models')
+	.then('controllers')
+	.then('routes')
+	.into(app);
 
 //app.get('/', routes.index);
 //app.get('/usuarios', routes.user.index);
