@@ -3,21 +3,27 @@
 	<head>
 		<meta charset = "utf-8">
 		<title>Ntalk - Agenda de contatos</title>
+		<link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="./stylesheets/signin.css">
+		<link rel="stylesheet" type="text/css" href="./stylesheets/sticky-footer.css">
 	</head>
 	<body>
-		<header>
-			<h1>Ntalk</h1>
-			<h4>Bem-vindo!</h4>
-		</header>
-		<section>
-			<form action = "/entrar" method = "post" >
-				<input type = "text" name = "nome" placeholder = "Seu nome" ><br>
-				<input type = "text" name = "email" placeholder = "Seu e-mail" ><br>
-				<button type = "submit" >Entrar</button>
-			</form>
-		</section>
-		<footer>
-			<small>Ntalk - Agenda de contatos</small>
-		</footer>
+		<div id = "wrap" >
+			<div class="container">
+					<form action = "/entrar" method = "post" class = "form-signin" >
+						<h1 class="form-signin-heading" style = "text-align: center;" >Ntalk</h1>
+						<h4 class="form-signin-heading" style = "text-align: center;" >Bem-vindo!</h4>
+
+						<input type = "text" name = "nome" placeholder = "Seu nome" class="form-control" >
+						<input type = "text" name = "email" placeholder = "Seu e-mail" class="form-control" >
+						<button type = "submit" class = "btn btn-lg btn-primary btn-block" >Entrar</button>
+					</form>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="container">
+				<p class="text-muted credit" style = "text-align: center;" >Ntalk - Agenda de contatos</p>
+			</div>
+		</div>
 	</body>
 </html>
