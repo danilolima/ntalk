@@ -33,10 +33,19 @@ module.exports = function(app) {
 			var contato = usuario.contatos[id];
 			var params = {usuario: usuario, contato: contato, id: id};
 
-			res.render('/contatos/edit' params);
+			res.render('/contatos/edit', params);
 		},
 
 		update: function(req, res){
+			var contato = req.body.contato;
+			var usuario = req.session.usuario;
+
+			usuario.contatos[req.params.id] = contato;
+			
+			res.redirect('/contatos');
+		},
+
+		destroy: function(req, res){
 			var usuario = req.session.usuario;
 			var id = req.params.id;
 
