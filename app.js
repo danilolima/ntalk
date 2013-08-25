@@ -12,6 +12,9 @@ var app = express();
 // all environments
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+app.use(express.cookieParser('ntalk'));
+app.use(express.session());
+app.use(express.bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /*Tem que sempre ficar no final*/
